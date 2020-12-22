@@ -11,6 +11,7 @@ import 'introduction_screen.dart';
 import 'package:flutter/services.dart';
 import './src/model/page_decoration.dart';
 import './src/model/page_view_model.dart';
+import 'ui/screens/splash_screen.dart';
 
 
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xFF36A381),
         primaryColor: Color(0xFF4690A3),
       ),
-      home: OnBoardingPage(), // Splashscreen was there
+      home: SplashScreen(), // Splashscreen was there
     );
   }
 }
@@ -87,49 +88,67 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         //   decoration: pageDecoration,
         // ),
         PageViewModel(
-          bodyWidget: SingleChildScrollView(
-            child: Column(
-              children: [
-                Text('Welcome to',style: TextStyle(fontSize: 20),),
-                Text('riseBee', style: gradientTitleStyle,),
-                Text('Are you ready to dive\nin a whole new Banking Experience?',textAlign: TextAlign.center,style: TextStyle(fontSize: 20),),
-                Container(
-                  child: Image.asset('assets/images/first_splash.png',height: MediaQuery.of(context).size.height*0.65,),
-                ),
-              ],
+          bodyWidget: Container(
+            margin: EdgeInsets.only(top: 10),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text('Welcome to',style: TextStyle(fontSize: 15),),
+                  Text('riseBee', style: gradientTitleStyle,),
+                  Text('Are you ready to dive\nin a whole new Banking Experience?',textAlign: TextAlign.center,style: TextStyle(fontSize: 20),),
+                  Container(
+                    child: Image.asset('assets/images/first_splash.png',height: MediaQuery.of(context).size.height*0.65,),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          //image: _buildImage('first_splash'),
+
+        ),
+        PageViewModel(
+          bodyWidget: Container(
+            margin: EdgeInsets.only(top: 10),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text('riseBee', style: gradientTitleStyle,),
+                  Text('Around the world, the effects of climate \n '
+                      'change are becoming harder to ignore.\n'
+                      'More and more forest fires are taking place\n'
+                      '   and the sky is full of smoke and our\n '
+                      '    city’s under smog threat. To feel \n'
+                      '  hopeless against the climate change \n'
+                      ' is our daily companion. Now, it is time\n'
+                      '              to take action: riseBee.',style: TextStyle(fontSize: 15),),
+                  Container(
+                    child: Image.asset('assets/images/second_splash.png',height: MediaQuery.of(context).size.height*0.65,),
+                  ),
+                ],
+              ),
             ),
           ),
           //image: _buildImage('first_splash'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('img2'),
-          footer: RaisedButton(
-            onPressed: () {
-              introKey.currentState?.animateScroll(0);
-            },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
-            ),
-            color: Colors.black54,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
+          bodyWidget: Container(
+            margin: EdgeInsets.only(top: 10),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text('riseBee', style: gradientTitleStyle,),
+                  Text('With the riseBee checking account,\nthe funds will not be used for investing\nin in coal, weapons and other '
+    'unsustainable industries.\n\nWe do not invest in anything harmful to nature and human!',style: TextStyle(fontSize: 15),),
+
+                  Container(
+                    child: Image.asset('assets/images/third_splash.png',height: MediaQuery.of(context).size.height*0.65,),
+                  ),
+                ],
+              ),
             ),
           ),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          bodyWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
-            ],
-          ),
-          image: _buildImage('img1'),
+          //image: _buildImage('first_splash'),
           decoration: pageDecoration,
         ),
       ],

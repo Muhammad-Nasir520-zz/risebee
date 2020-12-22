@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:risebeeapp/core/constants/colors.dart';
 
+import '../../main.dart';
+
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -16,7 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
     ///time for splash screen
     Timer(Duration(seconds: 3),
         /// Navigate to FirstWalkThroughScreen
-        () => Navigator.pushReplacementNamed(context, 'walk_through_1')
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => OnBoardingPage()))
+
+            //Navigator.pushReplacementNamed(context, 'walk_through_1')
     );
   }
 
