@@ -3,10 +3,10 @@ import 'package:risebeeapp/src/model/page_decoration.dart';
 
 class PageViewModel {
   /// Title of page
-  final String title;
-
-  /// Title of page
-  final Widget titleWidget;
+  // final String title;
+  //
+  // /// Title of page
+  // final Widget titleWidget;
 
   /// Text of page (description)
   final String body;
@@ -26,21 +26,12 @@ class PageViewModel {
   final PageDecoration decoration;
 
   PageViewModel({
-    this.title,
-    this.titleWidget,
     this.body,
     this.bodyWidget,
     this.image,
     this.footer,
     this.decoration = const PageDecoration(),
-  })  : assert(
-          title != null || titleWidget != null,
-          "You must provide either title (String) or titleWidget (Widget).",
-        ),
-        assert(
-          (title == null) != (titleWidget == null),
-          "You can not provide both title and titleWidget.",
-        ),
+  })  :
         assert(
           body != null || bodyWidget != null,
           "You must provide either body (String) or bodyWidget (Widget).",

@@ -16,14 +16,14 @@ class IntroContent extends StatelessWidget {
       padding: page.decoration.contentPadding,
       child: Column(
         children: [
-          Padding(
-            padding: page.decoration.titlePadding,
-            child: _buildWidget(
-              page.titleWidget,
-              page.title,
-              page.decoration.titleTextStyle,
-            ),
-          ),
+          // Padding(
+          //   padding: page.decoration.titlePadding,
+          //   child: _buildWidget(
+          //     page.titleWidget,
+          //     page.title,
+          //     page.decoration.titleTextStyle,
+          //   ),
+          // ),
           Padding(
             padding: page.decoration.descriptionPadding,
             child: _buildWidget(
